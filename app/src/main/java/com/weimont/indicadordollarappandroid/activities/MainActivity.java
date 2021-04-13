@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         viewModel.getDolarIndicador().observe(this, dolarIndicadorResponse ->
                         Toast.makeText(
                                 getApplicationContext(),
-                                "Total" + dolarIndicadorResponse.getIndicadors(),
+                                "Version" + dolarIndicadorResponse.getVersion(),
                                 Toast.LENGTH_SHORT
                         ).show()
                 );
