@@ -1,6 +1,7 @@
 package com.weimont.indicadordollarappandroid.network;
 
-import com.weimont.indicadordollarappandroid.responses.IndicadorReponse;
+
+import com.weimont.indicadordollarappandroid.responses.IndicadorResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -8,5 +9,5 @@ import retrofit2.http.GET;
 public interface ApiService {
 
     @GET("dolar")
-    Call<IndicadorReponse> getDolarIndicador();
+    Call<IndicadorResponse> getDolarIndicador();
 }

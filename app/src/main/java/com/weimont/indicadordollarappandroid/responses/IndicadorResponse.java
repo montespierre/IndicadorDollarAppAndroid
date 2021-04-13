@@ -5,7 +5,7 @@ import com.weimont.indicadordollarappandroid.models.Indicador;
 
 import java.util.List;
 
-public class IndicadorReponse {
+public class IndicadorResponse {
 
     @SerializedName("version")
     private String version;
