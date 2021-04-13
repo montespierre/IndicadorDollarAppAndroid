@@ -34,6 +34,6 @@ public class DolarIndicadorRepository {
             }
         });
 
-        return null;
+        return data;
     }
 }
