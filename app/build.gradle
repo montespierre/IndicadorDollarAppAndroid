@@ -1,0 +1,99 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.weimont.indicadordollarappandroid"
+        minSdkVersion 30
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    ///////////////////////////////////////////////////////////
+    // Enable dataBinding y viewBinding
+    buildFeatures{
+        dataBinding true
+    }
+    ///////////////////////////////////////////////////////////
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    ///////////////////////////////////////////////////////////
+
+    // CardView
+    // https://developer.android.com/jetpack/androidx/releases/cardview
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    // Material Design (deprecated android.support.design)
+    // https://developer.android.com/jetpack/androidx/migrate/artifact-mappings
+    // com.google.android.material:material-rc01
+    implementation "com.google.android.material:material:1.2.1"
+
+
+    // ROOM Persistance library
+    // https://developer.android.com/jetpack/androidx/releases/room
+    def room_version = "2.2.6"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+
+    // Livecycle
+    // https://developer.android.com/jetpack/androidx/releases/lifecycle
+    def lifecycle_version = "2.3.1"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // Annotation processor
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    //////// Otros
+
+    // RxJava: Reactive.io Extensions for the JVM
+    // ReactiveX is a library for composing asynchronous and event-based programs by using observable sequences.
+    implementation "io.reactivex.rxjava3:rxjava:3.0.11"
+
+    // Retrofit & Gson
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // SDP: An android lib that provides a new size unit - sdp (scalable dp). This size unit scales with the screen size. It can help Android developers with supporting multiple screens.
+    // https://github.com/intuit/sdp
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    // RoundedImageView
+    // A fast ImageView (and Drawable) that supports rounded corners (and ovals or circles)
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    ///////////////////////////////////////////////////////////
+}
